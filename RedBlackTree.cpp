@@ -2,10 +2,10 @@
 using namespace std;
 
 struct Node {
-	int val = -1;bool red = 1;
+	int val = -1;
+	bool red = 1;
 	Node *parent = 0, *left = 0, *right = 0;
 	Node() {
-
 	}
 	Node(bool red, int val, Node* parent) :
 			val(val), red(red), parent(parent) {
@@ -20,7 +20,6 @@ struct RedBlackTree {
 			root = new Node(0, val, 0);
 		else {
 			Node *parent = search(val);
-
 			Node* newNode = new Node(1, val, parent);
 			if (val > parent->val)
 				parent->right = newNode;
@@ -150,7 +149,6 @@ int main() {
 	vector<int> vec(N);
 	for (int i = 0; i < N; ++i)
 		vec[i] = rand();
-
 
 	for (auto x : vec)
 		tree.insert(x);
